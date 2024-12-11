@@ -17,19 +17,26 @@ export default function RandomColorGenerator() {
     return (
         <div style={
             {
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'column',
-                height: '100vh',
-                width: '100vw',
+               
                 backgroundColor: color
             }
         }>
             <button onClick={()=>(setColorType('hex'))}>Create HEX Color</button>
             <button onClick={()=>(setColorType('rgp'))}>Create RGB Color</button>
             <button onClick={()=>(generateRandomColor())}>Generate Random Color</button>
-            <h1>{color}</h1>
+            <div
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+                height: '100vh',
+                width: '100vw',
+            }}
+            >
+            <h1>{colorType==='hex'?'HEX COLOR':'RGB COLOR'}</h1>
+            <h3>{color}</h3>
+            </div>
         </div>
     )
 }
