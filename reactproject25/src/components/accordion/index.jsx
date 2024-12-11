@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import data from './data';
+import './style.css';
 
 export default function Accordion() {
 const [selected, setSelected] = useState(null);
@@ -11,11 +12,12 @@ function handleSingleSelection(currentId){
 }
 
 return <div className='wrapper'>
+    <h1>Accordion</h1>
     <div className='accordion'>
         {
             data?.length>0? (
                 data.map((item, index) => (
-                    <div className='item'>
+                    <div className='accordion-item'>
                         <div onClick={()=>handleSingleSelection(item.id)} className='title'>
                             <h3>{item.question}</h3>
                             <span>+</span>
