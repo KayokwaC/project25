@@ -13,6 +13,7 @@ function handleSingleSelection(currentId){
 
 return <div className='wrapper'>
     <h1>Accordion</h1>
+    <button>Enable Multi Selection</button>
     <div className='accordion'>
         {
             data?.length>0? (
