@@ -6,7 +6,8 @@ export default function Accordion() {
 const [selected, setSelected] = useState(null);
 
 function handleSingleSelection(currentId){
-    setSelected(currentId);
+    // nullify the selected state if the currentId is the same as the selected
+    setSelected(currentId === selected? null: currentId);
 }
 
 return <div className='wrapper'>
