@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       {/* <Accordion/> */}
-      <RandomColorGenerator/>
+      {/* <RandomColorGenerator/> */}
     </div>
   );
 }
