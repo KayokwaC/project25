@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill} from "react-icons/bs";
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
 export default function ImageSlider({ url, page, numberOfImages = 5 }) {
   const [loading, setLoading] = useState(false);
@@ -16,7 +16,9 @@ export default function ImageSlider({ url, page, numberOfImages = 5 }) {
 
       try {
         setLoading(true);
-        const response = await fetch(`${url}?page=${page}&limit=${numberOfImages}`);
+        const response = await fetch(
+          `${url}?page=${page}&limit=${numberOfImages}`
+        );
         const data = await response.json();
         setImages(data);
         setLoading(false);
@@ -34,7 +36,21 @@ export default function ImageSlider({ url, page, numberOfImages = 5 }) {
       {loading && <div>Loading...</div>}
       {error && <div>{error}</div>}
       <div>
-    
+        <BsArrowLeftCircleFill className="arrow arrow-left" />
+        {images?.map((image, index) => (
+          <img
+            key={index}
+            src={image.download_url}
+            alt={image.download_url}
+            className="current-image"
+          />
+        ))}
+        <BsArrowRightCircleFill className="arrow arrow-right" />
+        <span className="circle-indicators">
+          {images?.map((_, index) => (
+            <button key={index} className="current-indicator"></button>
+          ))}
+        </span>
       </div>
     </>
   );
