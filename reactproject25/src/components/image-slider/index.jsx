@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import "./style.css";
 
 export default function ImageSlider({ url, page, numberOfImages = 5 }) {
   const [loading, setLoading] = useState(false);
   const [images, setImages] = useState([]);
   const [error, setError] = useState(null);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentSlide, setCurrenSlide] = useState(0);
 
   useEffect(() => {
     async function fetchImages(url) {
@@ -29,6 +30,14 @@ export default function ImageSlider({ url, page, numberOfImages = 5 }) {
     }
     fetchImages(url);
   }, [url, numberOfImages, page]);
+  const handleNext = () => {
+    setCurrenSlide((prevSlide) => (prevSlide + 1) % images.length);
+  };
+
+  const handlePrevious = () => {
+    setCurrenSlide((prevSlide) => (prevSlide - 1 + images.length) % images.length);
+  };
+
   return (
     <>
       <div> Project 3 - Image-Slider</div>
@@ -36,19 +45,19 @@ export default function ImageSlider({ url, page, numberOfImages = 5 }) {
       {loading && <div>Loading...</div>}
       {error && <div>{error}</div>}
       <div>
-        <BsArrowLeftCircleFill className="arrow arrow-left" />
+        <BsArrowLeftCircleFill className="arrow arrow-left" onClick={handlePrevious}/>
         {images?.map((image, index) => (
           <img
             key={index}
             src={image.download_url}
             alt={image.download_url}
-            className="current-image"
+            className={index === currentSlide ? "current-image" : "current-image hide-current-image"}
           />
         ))}
-        <BsArrowRightCircleFill className="arrow arrow-right" />
+        <BsArrowRightCircleFill className="arrow arrow-right" onClick={handleNext}/>
         <span className="circle-indicators">
           {images?.map((_, index) => (
-            <button key={index} className="current-indicator"></button>
+            <button key={index} className={index === currentSlide ? "current-indicator" : "current-indicator inactive-indicator"} onClick={()=>setCurrenSlide(index)}></button>
           ))}
         </span>
       </div>

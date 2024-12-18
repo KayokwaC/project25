@@ -10,8 +10,11 @@
 .current-image {
   border: 0.5rem;
   box-shadow: 0px 0px 7px #666;
+  border-radius: 10px;
   width: 100%;
   height: 100%;
+  bottom: 10px;
+  transition: 0.5s;
 }
 
 .arrow {
@@ -27,23 +30,31 @@
 }
 
 .arrow-right {
-    right: 1rem;
-  }
+  right: 1rem;
+}
 
-  .circle-indicators {
-    position: absolute;
-    bottom: 1rem;
-    display: flex;
-  }
+.circle-indicators {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+}
 
-  .current-indicator {
-    width: 15px;
-    height: 15px;
-    border: none;
-    outline: none;
-    background-color: white;
-    border-radius: 50%;
-    filter: drop-shadow(0px 0px 5px #555);
-    margin: 0 0.2rem;
-    cursor: pointer;
-  }
+.current-indicator {
+  width: 15px;
+  height: 15px;
+  border: none;
+  outline: none;
+  background-color: white;
+  border-radius: 50%;
+  filter: drop-shadow(0px 0px 5px #555);
+  margin: 0 0.2rem;
+  cursor: pointer;
+}
+
+.hide-current-image {
+  display: none;
+}
+
+.inactive-indicator {
+  background-color: #666;
+}
