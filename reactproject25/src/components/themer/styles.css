@@ -1,43 +1,52 @@
-:root{
-    --background:#ffffff;
-    --text:#000000;
-    --button-bg:#000000;
-    --button-text:#ffffff;
-
+:root {
+  --background: #ffffff;
+  --text: #000000;
+  --button-bg: #000000;
+  --button-text: #ffffff;
 }
 
-[data-theme="dark"]{
-    --background:#000000;
-    --text:#ffffff;
-    --button-bg:#ffffff;
-    --button-text:#000000;
+[data-theme="dark"] {
+  --background: #000000;
+  --text: #ffffff;
+  --button-bg: #ffffff;
+  --button-text: #000000;
 }
 
-.light-dark-mode{
-    background-color:var(--background);
-    height: 100vh;
-    display:flex;
-    flex-direction: column;
-    justify-content:flex-end;
-    font-size: 20px;
-    transition: all 0.5s;
-    /* margin:10px; */
+.light-dark-mode .theme-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+
+  /* margin:10px; */
 }
 
-.light-dark-mode p {
-    color:var(--text);
-    font-size: 40px;
-    /* margin:10px; */
+.light-dark-mode {
+  background-color: var(--background);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 20px;
+  transition: all 0.5s;
+  /* margin:10px; */
 }
 
-.light-dark-mode button {
-   background-color: var(--button-bg);
-   border: 1px solid var(--button-bg);
-    color: var(--button-text);
-    margin: 15px 0px;
-    padding: 12px;
-    border-radius: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    /* margin:10px; */
+.light-dark-mode .theme-container p {
+  color: var(--text);
+  font-size: 40px;
+  margin: 0px;
+  /* margin:10px; */
+}
+
+.light-dark-mode .theme-container button {
+  background-color: var(--button-bg);
+  border: 1px solid var(--button-bg);
+  color: var(--button-text);
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  /* margin:10px; */
 }
