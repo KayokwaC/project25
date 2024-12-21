@@ -22,7 +22,7 @@ function App() {
       {/* 6. <TreeView menus={menus}/> */}
       {/* 7. <QRCodeGenerator/> */}
       {/* 8. <Themer/> */}
-      <ScrollIndicator/>
+      <ScrollIndicator url={'https://dummyjson.com/products?limit=100&skip=0'}/>
       
     </div>
   );
