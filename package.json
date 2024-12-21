@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "react-icons": "^5.4.0",
-    "react-qr-code": "^2.0.15"
+    "react-qr-code": "^2.0.15",
+    "react-scripts": "^5.0.1",
+    "semver": "^7.6.3"
   },
   "packageManager": "yarn@1.22.22+sha224.b3354a4448ff7f95109b317dcf100acbb19dd7a067ff7fad9acf941f"
 }
