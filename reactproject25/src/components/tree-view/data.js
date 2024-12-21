@@ -7,7 +7,24 @@ const menus = [
     {
       label: "Profile",
       to: "/profile",
-      children: []
+      children: [
+        {
+          label: "Name",
+          to: "/name",
+          children: []
+        },
+        {
+          label: "Username",
+          to: "/username",
+          children: []
+        }
+        ,
+        {
+          label: "Avatar",
+          to: "/avatar",
+          children: []
+        }
+      ]
     },
     {
       label: "Settings",
@@ -16,19 +33,20 @@ const menus = [
         {
           label: "Security",
           to: "/settings/security",
-          children: []
+          children: [
+            {
+              label: "Login",
+              to: "/login",
+              children: []
+            },
+            {
+              label: "Register",
+              to: "/register",
+              children: []
+            }
+          ]
         }
       ]
-    },
-    {
-      label: "Login",
-      to: "/login",
-      children: []
-    },
-    {
-      label: "Register",
-      to: "/register",
-      children: []
     }
   ];
   
