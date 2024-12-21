@@ -5,6 +5,7 @@ export default function LoadMoreData() {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(0);
+  const [maxCount, setMaxCount] = useState(false);
 
    async function fetchProducts() {
     setLoading(true);
@@ -29,7 +30,14 @@ export default function LoadMoreData() {
   useEffect(() => {
 
     fetchProducts();
-  }, []);
+  }, [count]);
+
+  useEffect(() => {
+
+    if (products.length >= 100) {
+      setMaxCount(true);
+    }
+  }, [products]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -55,7 +63,7 @@ export default function LoadMoreData() {
         }
       </div>
 
-      <button className="load-more-data__button">Load More Products</button>
+      <button className="load-more-data__button" onClick={()=> setCount(count+1)} disabled={maxCount}>Load More Products</button>
     </div>
   );
 }
