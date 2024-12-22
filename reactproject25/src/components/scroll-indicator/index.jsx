@@ -4,6 +4,7 @@ export default function ScrollIndicator({url}) {
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState([]);
     const [error, setError] = useState(null);
+    const [scrollPercentage, setScrollPercentage] = useState(0);
 
 async function fetchData(dataUrl) {
     setLoading(true);
@@ -24,10 +25,23 @@ async function fetchData(dataUrl) {
     }
 }
 
+function handleScrollPercentage() {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        const percentage = (scrolled / scrollableHeight) * 100;
+        setScrollPercentage(percentage);
+}
 
 useEffect(() => {
     fetchData(url);
 }, [url]);
+
+useEffect(() => {
+    window.addEventListener('scroll', handleScrollPercentage);
+    return () => {
+        window.removeEventListener('scroll', ()=>{});
+    }
+}, [scrollPercentage]);
 
 
 if(loading)
