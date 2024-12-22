@@ -10,6 +10,8 @@ import menus from './components/tree-view/data';
 import QRCodeGenerator from './components/qr-code-generator';
 import Themer from './components/themer';
 import ScrollIndicator from './components/scroll-indicator';
+import Tabs from './components/custom-tabs/tabs';
+import TabsTest from './components/custom-tabs/tabs-test';
 
 function App() {
   return (
@@ -22,7 +24,8 @@ function App() {
       {/* 6. <TreeView menus={menus}/> */}
       {/* 7. <QRCodeGenerator/> */}
       {/* 8. <Themer/> */}
-      <ScrollIndicator url={'https://dummyjson.com/products?limit=100&skip=0'}/>
+      {/* 9. <ScrollIndicator url={'https://dummyjson.com/products?limit=100&skip=0'}/> */}
+      <TabsTest/>
       
     </div>
   );
