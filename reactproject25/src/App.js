@@ -15,6 +15,7 @@ import TabsTest from './components/custom-tabs/tabs-test';
 import Modal from './components/custom-modal/modal';
 import ModalTest from './components/custom-modal/modal-test';
 import Test from './components/custom-useEffect/test';
+import UseOutsideClickTest from './components/use-outside-click/test';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
       {/* 9. <ScrollIndicator url={'https://dummyjson.com/products?limit=100&skip=0'}/> */}
       {/* 10. <TabsTest/> */}
       {/* 11. <ModalTest/> */}
-      <Test/>
+      <UseOutsideClickTest/>
       
     </div>
   );
