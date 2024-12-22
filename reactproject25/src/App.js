@@ -12,6 +12,8 @@ import Themer from './components/themer';
 import ScrollIndicator from './components/scroll-indicator';
 import Tabs from './components/custom-tabs/tabs';
 import TabsTest from './components/custom-tabs/tabs-test';
+import Modal from './components/custom-modal/modal';
+import ModalTest from './components/custom-modal/modal-test';
 
 function App() {
   return (
@@ -25,7 +27,8 @@ function App() {
       {/* 7. <QRCodeGenerator/> */}
       {/* 8. <Themer/> */}
       {/* 9. <ScrollIndicator url={'https://dummyjson.com/products?limit=100&skip=0'}/> */}
-      <TabsTest/>
+      {/* 10. <TabsTest/> */}
+      <ModalTest/>
       
     </div>
   );
