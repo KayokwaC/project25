@@ -1,11 +1,14 @@
-export default function Modal({ id, header, body, footer}) {
+import './modal.css';
+
+
+export default function Modal({ id, onClose, header, body, footer}) {
   // const showHideClassName = show ? 'modal display-block' : 'modal display-none';
 
   return (
     <div id={id || "modal"} className="modal">
       <div className="modal-content">
         <div className="header">
-            <span className="close-modal-icon">&times;</span>
+            <span className="close-modal-icon" onClick={onClose}>&times;</span>
             <h2>{header || "Header"}</h2>
         </div>
         <div className="body">
