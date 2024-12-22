@@ -53,7 +53,11 @@ export default function ScrollIndicator({ url }) {
           <div
             className="scroll-indicator__progress"
             style={{ width: `${scrollPercentage}%` }}
-          ></div>
+          >
+            <p style={{ color: "white" }}>
+              {scrollPercentage ? Math.round(scrollPercentage.toFixed(2)) : 0}%
+            </p>
+          </div>
         </div>
       </div>
       <div className="data-container">
