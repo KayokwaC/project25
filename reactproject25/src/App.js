@@ -31,7 +31,8 @@ function App() {
       {/* 9. <ScrollIndicator url={'https://dummyjson.com/products?limit=100&skip=0'}/> */}
       {/* 10. <TabsTest/> */}
       {/* 11. <ModalTest/> */}
-      <UseOutsideClickTest/>
+      {/* 12. <Test/> */}
+      {/* 13. <UseOutsideClickTest/> */}
       
     </div>
   );
