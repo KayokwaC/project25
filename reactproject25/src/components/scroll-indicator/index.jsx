@@ -31,6 +31,7 @@ export default function ScrollIndicator({ url: myUrl }) {
     setScrollPercentage(percentage);
   }
 
+  // comment 
   useEffect(() => {
     fetchData(myUrl);
   }, [fetchData, myUrl]);
