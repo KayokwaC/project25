@@ -44,7 +44,7 @@ export default function ScrollIndicator({ url: myUrl }) {
   }, [scrollPercentage]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Loading scroll indicator...</div>;
   }
   return (
     <div>
