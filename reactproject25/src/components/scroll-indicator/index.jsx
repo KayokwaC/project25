@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import "./scroll.css";
 
 export default function ScrollIndicator({ url: myUrl }) {
@@ -7,7 +7,7 @@ export default function ScrollIndicator({ url: myUrl }) {
   const [error, setError] = useState(null);
   const [scrollPercentage, setScrollPercentage] = useState(0);
 
-  async function fetchData(dataUrl) {
+  const fetchData = useCallback(async (dataUrl) => {
     setLoading(true);
     try {
       const response = await fetch(dataUrl);
@@ -21,7 +21,7 @@ export default function ScrollIndicator({ url: myUrl }) {
       setLoading(false);
       console.error(error);
     }
-  }
+  }, [error]);
 
   function handleScrollPercentage() {
     const scrollableHeight =
@@ -39,9 +39,9 @@ export default function ScrollIndicator({ url: myUrl }) {
   useEffect(() => {
     window.addEventListener("scroll", handleScrollPercentage);
     return () => {
-      window.removeEventListener("scroll", () => {});
+      window.removeEventListener("scroll", handleScrollPercentage);
     };
-  }, [scrollPercentage]);
+  }, []);
 
   if (loading) {
     return <div>Loading scroll indicator...</div>;
